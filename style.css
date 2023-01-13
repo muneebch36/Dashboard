@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas:
+    "sidenav header"
+    "sidenav center";
+  gap: 4px;
+}
+
+.sidenav {
+  grid-area: sidenav;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  grid-area: header;
+  /*  maybe display flex to keep content where it needs to be? */
+}
+
+.header-top {
+  display: flex;
+}
+
+.header-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  grid-area: center;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 5fr 3fr;
+  grid-template-areas:
+    "center-cards center-top-right"
+    "center-cards center-bottom-right";
+}
+
+.center-cards {
+  grid-area: center-cards;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  height: 200px;
+}
+
+.center-top-right {
+  grid-area: center-top-right;
+}
+
+.center-bottom-right {
+  grid-area: center-bottom-right;
+}
